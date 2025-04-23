@@ -1,0 +1,185 @@
+---
+const navItems = [
+  { href: '/', text: 'Home' },
+  { href: '/about', text: 'About' },
+  { href: '/history', text: 'History' },
+  { href: '/architecture', text: 'Architecture' },
+  { href: '/visitor-info', text: 'Visitor Info', highlight: true },
+  { href: '/gallery', text: 'Gallery' },
+  { href: '/contact', text: 'Contact' }
+];
+
+// Search data mapping
+const searchData = [
+  { title: 'Home', url: '/', content: 'Welcome to Brihadeeswara Temple, a UNESCO World Heritage site in Thanjavur, Tamil Nadu.' },
+  { title: 'About', url: '/about', content: 'Learn about the historical significance, architectural features, and cultural importance of the Brihadeeswara Temple.' },
+  { title: 'History', url: '/history', content: 'Explore the rich history from Raja Raja Chola I to present day, including construction timeline and cultural significance.' },
+  { title: 'Architecture', url: '/architecture', content: 'Discover architectural elements like Vimana, Nandi Mandapam, sculptures, and engineering marvels.' },
+  { title: 'Visitor Info', url: '/visitor-info', content: 'Temple timings, dress code, photography rules, accommodation, and travel information.' },
+  { title: 'Gallery', url: '/gallery', content: 'Visual collection of temple architecture, sculptures, festivals, and cultural events.' },
+  { title: 'Contact', url: '/contact', content: 'Get in touch with temple administration, location details, and contact information.' }
+];
+---
+
+<header class="bg-white sticky top-0 z-50 shadow-md transition-all duration-300" id="site-header">
+  <div class="temple-container">
+    <nav class="flex items-center justify-between py-4">
+      <!-- Logo and Search -->
+      <div class="flex items-center gap-8">
+        <a href="/" class="flex items-center gap-2">
+          <span class="text-temple-red font-heading text-2xl font-bold">Brihadeeswara</span>
+          <span class="hidden sm:inline-block text-temple-navy font-heading">Temple</span>
+        </a>
+        
+        <!-- Search Bar -->
+        <div class="hidden md:block relative">
+          <div class="relative">
+            <input 
+              type="search" 
+              id="site-search"
+              placeholder="Search the temple site..." 
+              class="w-64 pl-10 pr-4 py-2 rounded-full bg-temple-stone border-0 focus:ring-2 focus:ring-temple-gold"
+            />
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+          <!-- Search Results Dropdown -->
+          <div id="search-results" class="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-lg hidden max-h-96 overflow-y-auto">
+            <!-- Results will be populated here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden">
+        <button id="menu-toggle" class="text-temple-navy p-2" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center space-x-6">
+        {navItems.map(item => (
+          <li>
+            <a 
+              href={item.href}
+              class={`text-temple-navy hover:text-temple-red transition-colors duration-200 font-medium ${
+                item.highlight ? 'bg-temple-red text-white px-4 py-2 rounded-full hover:bg-temple-brown hover:text-white' : ''
+              }`}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden w-full pb-4">
+      <ul class="flex flex-col space-y-3">
+        {navItems.map(item => (
+          <li>
+            <a 
+              href={item.href}
+              class={`block py-2 px-4 text-temple-navy hover:bg-temple-stone rounded-lg transition-colors duration-200 ${
+                item.highlight ? 'bg-temple-red text-white hover:bg-temple-brown' : ''
+              }`}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+  
+  // Header scroll effect
+  const header = document.getElementById('site-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('shadow-lg', 'bg-white/95', 'backdrop-blur-sm');
+      } else {
+        header.classList.remove('shadow-lg', 'bg-white/95', 'backdrop-blur-sm');
+      }
+    });
+  }
+
+  // Search functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('site-search') as HTMLInputElement;
+    const searchResults = document.getElementById('search-results');
+    
+    if (searchInput && searchResults) {
+      searchInput.addEventListener('input', (e) => {
+        const query = searchInput.value.trim().toLowerCase();
+        
+        if (query.length < 2) {
+          searchResults.classList.add('hidden');
+          return;
+        }
+        
+        const results = searchData.filter(item => 
+          item.title.toLowerCase().includes(query) || 
+          item.content.toLowerCase().includes(query)
+        );
+        
+        if (results.length > 0) {
+          searchResults.innerHTML = results.map(result => `
+            <a href="${result.url}" class="block p-3 hover:bg-gray-100">
+              <div class="font-medium text-temple-navy">${result.title}</div>
+              <div class="text-sm text-gray-600">${result.content}</div>
+            </a>
+          `).join('');
+          searchResults.classList.remove('hidden');
+        } else {
+          searchResults.innerHTML = `
+            <div class="p-3 text-gray-600">No results found</div>
+          `;
+          searchResults.classList.remove('hidden');
+        }
+      });
+      
+      // Close search results when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target as Node) && !searchResults.contains(e.target as Node)) {
+          searchResults.classList.add('hidden');
+        }
+      });
+
+      // Handle form submission
+      searchInput.closest('form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = searchInput.value.trim().toLowerCase();
+        
+        if (query.length >= 2) {
+          const results = searchData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            item.content.toLowerCase().includes(query)
+          );
+          
+          if (results.length > 0) {
+            window.location.href = results[0].url;
+          }
+        }
+      });
+    }
+  });
+</script>
