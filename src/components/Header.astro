@@ -6,18 +6,7 @@ const navItems = [
   { href: '/architecture', text: 'Architecture' },
   { href: '/visitor-info', text: 'Visitor Info', highlight: true },
   { href: '/gallery', text: 'Gallery' },
-  { href: '/contact', text: 'Contact' }
-];
-
-// Search data mapping
-const searchData = [
-  { title: 'Home', url: '/', content: 'Welcome to Brihadeeswara Temple, a UNESCO World Heritage site in Thanjavur, Tamil Nadu.' },
-  { title: 'About', url: '/about', content: 'Learn about the historical significance, architectural features, and cultural importance of the Brihadeeswara Temple.' },
-  { title: 'History', url: '/history', content: 'Explore the rich history from Raja Raja Chola I to present day, including construction timeline and cultural significance.' },
-  { title: 'Architecture', url: '/architecture', content: 'Discover architectural elements like Vimana, Nandi Mandapam, sculptures, and engineering marvels.' },
-  { title: 'Visitor Info', url: '/visitor-info', content: 'Temple timings, dress code, photography rules, accommodation, and travel information.' },
-  { title: 'Gallery', url: '/gallery', content: 'Visual collection of temple architecture, sculptures, festivals, and cultural events.' },
-  { title: 'Contact', url: '/contact', content: 'Get in touch with temple administration, location details, and contact information.' }
+  { href: '/blog', text: 'Blog' }
 ];
 ---
 
@@ -100,6 +89,17 @@ const searchData = [
 </header>
 
 <script>
+  // Search data mapping
+  const searchData = [
+    { title: 'Home', url: '/', content: 'Welcome to Brihadeeswara Temple, a UNESCO World Heritage site in Thanjavur, Tamil Nadu.' },
+    { title: 'About', url: '/about', content: 'Learn about the historical significance, architectural features, and cultural importance of the Brihadeeswara Temple.' },
+    { title: 'History', url: '/history', content: 'Explore the rich history from Raja Raja Chola I to present day, including construction timeline and cultural significance.' },
+    { title: 'Architecture', url: '/architecture', content: 'Discover architectural elements like Vimana, Nandi Mandapam, sculptures, and engineering marvels.' },
+    { title: 'Visitor Info', url: '/visitor-info', content: 'Temple timings, dress code, photography rules, accommodation, and travel information.' },
+    { title: 'Gallery', url: '/gallery', content: 'Visual collection of temple architecture, sculptures, festivals, and cultural events.' },
+    { title: 'Blog', url: '/blog', content: 'Read articles about temple history, architecture, and cultural significance.' }
+  ];
+
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');

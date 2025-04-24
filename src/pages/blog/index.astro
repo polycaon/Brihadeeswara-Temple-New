@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { blogPosts } from '../../data/blog-posts';
+
+const publishedPosts = blogPosts.filter(post => post.published);
+---
+
+<Layout
+  title="Blog"
+  description="Read the latest articles about Brihadeeswara Temple's history, architecture, and cultural significance."
+>
+  <Hero
+    title="Temple Blog"
+    subtitle="Discover stories, history, and insights about Brihadeeswara Temple"
+    backgroundImage="/images/hero-images/blog-hero.jpg"
+    height="h-[40vh]"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="temple-container">
+      <SectionTitle
+        title="Latest Articles"
+        subtitle="Explore our collection of articles about the temple's history, architecture, and cultural significance"
+      />
+
+      {publishedPosts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          {publishedPosts.map((post) => (
+            <BlogCard post={post} />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center text-gray-600 py-12">
+          <p class="text-lg mb-4">No blog posts found.</p>
+          <p class="text-sm">Check back soon for new articles about Brihadeeswara Temple.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

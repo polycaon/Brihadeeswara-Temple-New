@@ -5,21 +5,18 @@ export default {
     extend: {
       colors: {
         'temple-red': '#CD5C5C',
-        'temple-gold': '#D4AF37',
+        'temple-gold': '#D4AF37', 
         'temple-navy': '#141E30',
         'temple-stone': '#F5F5F5',
-        'temple-brown': '#8B4513',
-        'temple-accent': '#FF7F50'
+        'temple-brown': '#8B4513'
       },
       fontFamily: {
         'heading': ['"Playfair Display"', 'serif'],
         'body': ['"Open Sans"', 'sans-serif']
-      },
-      backgroundImage: {
-        'hero-pattern': "url('/images/temple-bg.jpg')",
-        'footer-texture': "url('/images/footer-bg.jpg')"
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
