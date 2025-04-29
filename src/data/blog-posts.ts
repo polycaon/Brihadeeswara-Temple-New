@@ -17,6 +17,79 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "4",
+    title: "Where is Brihadeeswara Temple Located? - Complete Guide",
+    slug: "where-is-brihadeeswara-temple-located",
+    excerpt: "Discover the exact location of Brihadeeswara Temple in Thanjavur, Tamil Nadu, along with detailed directions and nearby attractions.",
+    content: `<article class="prose prose-lg max-w-none">
+      <div class="bg-[#FFF8E1] border-l-4 border-[#FFA000] p-6 my-8">
+        <p>The Brihadeeswara Temple, also known as the Peruvudaiyar Kovil, is located in the heart of Thanjavur (Tanjore) city in Tamil Nadu, India. Considered as a UNESCO World Heritage Site, the temple stands tall within the Thanjavur Fort Complex, a fortified area that once served as the political and cultural hub of the mighty Chola Empire.</p>
+      </div>
+      
+      <div class="bg-gray-100 p-6 rounded-lg my-8">
+        <p>The Brihadeeswara Temple is situated near the southern bank of the Cauvery River and the exact address is:</p>
+        <p class="font-bold text-temple-navy">Membalam Rd, Balaganapathy Nagar, Thanjavur, Tamil Nadu 613007</p>
+        <p>This makes it easily accessible for pilgrims and travelers exploring South India's spiritual heritage.</p>
+      </div>
+      
+      <div class="my-8">
+        <h2 class="text-2xl font-bold text-temple-navy mb-4">Exact Geographic Location & How to Reach</h2>
+        <div class="flex justify-center">
+        <img src="https://www.researchgate.net/publication/265084072/figure/fig3/AS:667619367612416@1536184269066/Location-map-of-the-study-area.jpg" alt="Thanjavur location map" class="w-[600px] rounded-lg mb-4">
+        </div>
+        <p>Geographically, Thanjavur lies in the fertile Cauvery Delta region, which is approximately 350 kilometers (or 217 miles) southwest of Chennai and about 55 kilometers (or 34 miles) northeast of Tiruchirappalli (Trichy). The temple is situated within the old walled city area, surrounded by historical structures like the Thanjavur Palace and the Saraswathi Mahal Library.</p>
+        <p>For those using GPS navigation, the temple's coordinates are <code class="bg-gray-200 px-2 py-1 rounded">10.7828° N latitude and 79.1318° E longitude</code>, which can be easily located on Google Maps or any navigation app.</p>
+      </div>
+      
+      <div class="my-8">
+        <h2 class="text-2xl font-bold text-temple-navy mb-4">Why the Location Matters</h2>
+        <div class="flex justify-center">
+        <img src="https://live.staticflickr.com/3894/14914066431_273b874181_h.jpg" alt="Brihadeeswara Temple complex view" class="w-[1000px] rounded-lg mb-4">
+        </div>
+        <p>The Brihadeeswara Temple's location in Thanjavur Fort features its historical importance as the spiritual and main center of the Chola dynasty. Built by Emperor Raja Raja Chola I in 1010 CE, the temple was designed to show the empire's greatness, and its location was carefully chosen to dominate the city's skyline. Even today, the temple remains a crucial point for devotees, historians, and architecture lovers.</p>
+        <p>For travelers planning a visit, the temple's central location in Thanjavur means you can easily explore nearby attractions like the Thanjavur Maratha Palace, Schwartz Church, and the Tamil University Museum, all within a short distance.</p>
+      </div>
+      
+      <div class="bg-[#E8F5E9] border-l-4 border-[#4CAF50] p-6 my-8">
+        <h3 class="text-xl font-bold text-temple-navy mb-3">Pro Tip for Visitors</h3>
+        <p>To avoid crowds, plan your visit early in the morning or on weekdays. The temple is open from 6:00 AM to 12:30 PM and 4:00 PM to 8:30 PM.</p>
+        <p>For accurate temple timings and rituals, please check <a href="/visitor-info" class="text-temple-red hover:text-temple-brown">our visitor information page</a>.</p>
+        <p>Wondering how much time you'll need? Read our guide on <a href="/blog/how-much-time-needed-visit-brihadeeswarar-temple" class="text-temple-red hover:text-temple-brown">how much time is needed to explore the temple</a>.</p>
+      </div>
+      
+      <div class="my-8">
+        <h2 class="text-2xl font-bold text-temple-navy mb-4">Nearby Attractions</h2>
+        <div class="flex justify-center">
+        <img src="https://thanjavur.info/wp-content/uploads/2019/05/thanjavur-aranmanai-palace.jpg" alt="Thanjavur Palace" class="w-[600px] rounded-lg mb-4">
+        </div>
+        <ul class="space-y-2">
+          <li><strong>Thanjavur Palace</strong> - Just 500m from the temple</li>
+          <li><strong>Saraswathi Mahal Library</strong> - Ancient library with rare manuscripts</li>
+          <li><strong>Schwartz Church</strong> - Historic colonial-era church</li>
+          <li><strong>Tamil University Museum</strong> - Showcasing Tamil culture and history</li>
+        </ul>
+      </div>
+      
+      <div class="bg-[#FFF8E1] border-l-4 border-[#FFA000] p-6 my-8">
+        <h3 class="text-xl font-bold text-temple-navy mb-3">Plan Your Visit</h3>
+        <p>Now that you know exactly where the Brihadeeswara Temple is located, you can plan your pilgrimage or cultural visit to this magnificent Chola-era wonder. Don't forget to check:</p>
+        <ul class="space-y-2">
+          <li><a href="/visitor-info" class="text-temple-red hover:text-temple-brown">Temple timings and rituals</a></li>
+          <li><a href="/blog/how-much-time-needed-visit-brihadeeswarar-temple" class="text-temple-red hover:text-temple-brown">Time needed for exploration</a></li>
+          <li><a href="/visitor-info#accommodation" class="text-temple-red hover:text-temple-brown">Nearby accommodation options</a></li>
+        </ul>
+      </div>
+    </article>`,
+    author: "Temple Administration",
+    published_at: "2025-04-28T12:00:00Z",
+    created_at: "2025-04-28T12:00:00Z",
+    updated_at: "2025-04-28T12:00:00Z",
+    published: true,
+    category: "Visitor Information",
+    read_time: 6,
+    tags: ["location", "directions", "visitor guide", "nearby attractions"]
+  },
+  {
     id: "1",
     title: "Brihadeeswara Temple Timings",
     slug: "brihadeeswara-temple-timings",
