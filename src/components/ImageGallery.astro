@@ -22,6 +22,19 @@ const getColumnClass = (cols: number) => {
   
   return columnClasses[cols as keyof typeof columnClasses] || columnClasses[3];
 };
+
+// Add structured data for image gallery
+const gallerySchema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "image": images.map(img => ({
+    "@type": "ImageObject",
+    "contentUrl": img.src,
+    "description": img.alt,
+    "width": img.width,
+    "height": img.height
+  }))
+};
 ---
 
 <div class={`grid ${getColumnClass(columns)} gap-4`}>
@@ -39,14 +52,16 @@ const getColumnClass = (cols: number) => {
         alt={image.alt} 
         class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110" 
         loading="lazy"
+        width={image.width}
+        height={image.height}
       />
     </a>
   ))}
+  <script type="application/ld+json" set:html={JSON.stringify(gallerySchema)} />
 </div>
 
 <script>
   const initPhotoSwipe = async () => {
-    // Dynamically import PhotoSwipe and its styles
     const PhotoSwipe = (await import('photoswipe')).default;
     await import('photoswipe/style.css');
 
@@ -101,7 +116,6 @@ const getColumnClass = (cols: number) => {
           showHideOpacity: true
         };
         
-        // Collect all gallery items for PhotoSwipe
         const items = Array.from(galleryItems).map(galleryItem => {
           const link = galleryItem as HTMLAnchorElement;
           return {
@@ -112,7 +126,6 @@ const getColumnClass = (cols: number) => {
           };
         });
         
-        // Initialize PhotoSwipe
         const pswp = new PhotoSwipe({
           gallery: pswpElement,
           options,
@@ -124,7 +137,6 @@ const getColumnClass = (cols: number) => {
     });
   };
 
-  // Initialize when the DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initPhotoSwipe);
   } else {

@@ -8,14 +8,60 @@ export interface Props {
   description?: string;
   ogImage?: string;
   canonicalURL?: string;
+  type?: string;
 }
 
 const { 
   title, 
   description = "Discover the magnificence of Brihadeeswara Temple, a UNESCO World Heritage site in Thanjavur, India. Learn about its history, architecture, and plan your visit.", 
   ogImage = "https://t3.ftcdn.net/jpg/05/59/74/36/240_F_559743693_dAUFbSqvfH03wwPI8YmWWB5d9wc4yDJy.jpg",
-  canonicalURL = Astro.url
+  canonicalURL = Astro.url,
+  type = "website"
 } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Brihadeeswara Temple",
+  "description": description,
+  "url": canonicalURL,
+  "image": ogImage,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Membalam Rd, Balaganapathy Nagar",
+    "addressLocality": "Thanjavur",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "613007",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "10.7828",
+    "longitude": "79.1318"
+  },
+  "openingHours": ["Mo-Su 06:00-12:30", "Mo-Su 16:00-20:30"],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61575510247852"
+  ]
+};
+
+const newsTickerItems = [
+  {
+    text: "Discover the Great Living Chola Temple of Tamil Nadu",
+    url: "https://www.jagranjosh.com/web-stories/which-temple-in-tamil-nadu-is-known-as-great-living-chola-temple-118139",
+    date: "May 5"
+  },
+  {
+    text: "Experience the architectural marvel of Brihadeeswara Temple",
+    url: "/architecture",
+    date: "May 4"
+  },
+  {
+    text: "Plan your visit to the UNESCO World Heritage Site",
+    url: "/visitor-info",
+    date: "May 3"
+  }
+];
 ---
 
 <!doctype html>
@@ -30,14 +76,16 @@ const {
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Brihadeeswara Temple" />
-    <meta name="keywords" content="Brihadeeswara Temple, Thanjavur, UNESCO World Heritage, Chola architecture, Tamil Nadu temples, Raja Raja Chola, Hindu temple, South Indian architecture" />
+    <meta name="keywords" content="Brihadeeswara Temple, Thanjavur, UNESCO World Heritage, Chola architecture, Tamil Nadu temples, Raja Raja Chola, Hindu temple, South Indian architecture, Peruvudaiyar Kovil, Big Temple Thanjavur" />
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Brihadeeswara Temple" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -46,18 +94,121 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    
     <title>{title} | Brihadeeswara Temple</title>
+
+    <style>
+      .news-ticker {
+        overflow: hidden;
+        background: #141E30;
+        padding: 8px 0;
+        position: relative;
+      }
+
+      .news-ticker-content {
+        white-space: nowrap;
+        animation: ticker 30s linear infinite;
+        display: inline-block;
+      }
+
+      .news-ticker-content:hover {
+        animation-play-state: paused;
+      }
+
+      .news-ticker-item {
+        display: inline-block;
+        padding: 0 50px;
+        color: #D4AF37;
+      }
+
+      .news-ticker-item a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .news-ticker-item a:hover {
+        text-decoration: underline;
+      }
+
+      .news-ticker-date {
+        color: #fff;
+        font-size: 0.9em;
+        margin-left: 8px;
+      }
+
+      @keyframes ticker {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .news-ticker-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #D4AF37;
+        border: none;
+        color: #141E30;
+        padding: 2px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+    </style>
   </head>
   <body class="bg-temple-stone min-h-screen flex flex-col">
+    <div class="news-ticker" id="newsTicker">
+      <div class="news-ticker-content">
+        {newsTickerItems.map(item => (
+          <span class="news-ticker-item">
+            <a href={item.url} target="_blank" rel="noopener noreferrer">
+              {item.text}
+              <span class="news-ticker-date">({item.date})</span>
+            </a>
+          </span>
+        ))}
+      </div>
+      <button class="news-ticker-toggle" id="tickerToggle">Hide</button>
+    </div>
     <Header />
     <main class="flex-grow">
       <slot />
     </main>
     <Footer />
+
+    <script>
+      const tickerToggle = document.getElementById('tickerToggle');
+      const newsTicker = document.getElementById('newsTicker');
+      
+      if (tickerToggle && newsTicker) {
+        tickerToggle.addEventListener('click', () => {
+          if (newsTicker.style.display === 'none') {
+            newsTicker.style.display = 'block';
+            tickerToggle.textContent = 'Hide';
+          } else {
+            newsTicker.style.display = 'none';
+            tickerToggle.textContent = 'Show News';
+          }
+        });
+      }
+    </script>
   </body>
 </html>
