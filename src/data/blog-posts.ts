@@ -309,76 +309,136 @@ export const blogPosts: BlogPost[] = [
     slug: "how-much-time-needed-visit-brihadeeswarar-temple",
     excerpt: "A detailed guide on planning your visit duration to the Brihadeeswarar Temple based on your interests and what you want to explore.",
     content: `<article class="prose prose-lg max-w-none">
-      <div class="bg-[#e3f2fd] border-l-4 border-[#2196f3] p-6 my-8">
-        <p>Your visit duration to the Brihadeeswarar Temple (Big Temple) depends on your interests. Here's a comprehensive breakdown:</p>
+      <p class="text-center text-gray-600 italic">Last updated: July 2024</p>
+      
+      <div class="highlight-box">
+        <p>Planning your visit to the magnificent Brihadeeswarar Temple (also known as Peruvudaiyar Kovil) in Thanjavur? Your visit duration depends on your interests—whether you're seeking a quick darshan, exploring the architectural marvels, or immersing yourself in the temple's rich history. This comprehensive guide breaks down exactly how much time you'll need for different types of visits.</p>
       </div>
       
-      <div class="bg-temple-stone rounded-lg p-6 my-8">
-        <h3 class="text-temple-navy font-bold mb-4">1. Quick Darshan (1 Hour)</h3>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            If you're only seeking darshan and blessings of Lord Shiva
-          </li>
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            Expect longer queues during festivals or auspicious days
-          </li>
+      <div class="duration-card">
+        <h3>Quick Darshan (1 Hour)</h3>
+        <p><span class="time-estimate">Time Needed: 45-60 minutes</span></p>
+        <p>If you're primarily visiting for darshan and blessings of Lord Shiva, you can complete your visit in about an hour during normal days. This includes:</p>
+        <ul>
+          <li>Security check and footwear deposit (5-10 minutes)</li>
+          <li>Queue time for darshan (20-30 minutes on normal days)</li>
+          <li>Actual darshan and brief prayer (10-15 minutes)</li>
+          <li>Collecting footwear and exit (5-10 minutes)</li>
+        </ul>
+        <div class="pro-tip">
+          <p><strong>Pro Tip:</strong> During festivals or auspicious days (like Shivaratri), expect much longer queues (2-3 hours).</p>
+        </div>
+      </div>
+      
+      <div class="duration-card">
+        <h3>Exploring Architecture & Sculptures (2-3 Hours)</h3>
+        <p><span class="time-estimate">Time Needed: 2-3 hours</span></p>
+        <p>The Brihadeeswarar Temple is a UNESCO World Heritage Site and masterpiece of Chola architecture. To fully appreciate it, allocate:</p>
+        <ul>
+          <li><strong>30-45 minutes</strong> for the world's largest Shiva Lingam and Nandi statue</li>
+          <li><strong>45-60 minutes</strong> to admire the intricate stone carvings and frescoes</li>
+          <li><strong>30 minutes</strong> to walk around the massive complex and appreciate the engineering</li>
+        </ul>
+        
+        <table class="time-table">
+          <thead>
+            <tr>
+              <th>Architecture Feature</th>
+              <th>Recommended Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Main Vimana (Tower)</td>
+              <td>20-30 minutes</td>
+            </tr>
+            <tr>
+              <td>Nandi Mandapa</td>
+              <td>15-20 minutes</td>
+            </tr>
+            <tr>
+              <td>Wall Carvings & Inscriptions</td>
+              <td>30-45 minutes</td>
+            </tr>
+            <tr>
+              <td>Circumambulation Path</td>
+              <td>20 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="duration-card">
+        <h3>Peak Times & Best Visiting Hours</h3>
+        <p>The time you'll need also depends on when you visit. Here are the best times to optimize your visit:</p>
+        
+        <table class="time-table">
+          <thead>
+            <tr>
+              <th>Time of Visit</th>
+              <th>Crowd Level</th>
+              <th>Experience</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>6:00-8:00 AM</strong> (Opening time)</td>
+              <td>Low</td>
+              <td>Most peaceful, best for photography</td>
+            </tr>
+            <tr>
+              <td><strong>9:00 AM-12:00 PM</strong></td>
+              <td>High</td>
+              <td>Peak tourist hours, longest queues</td>
+            </tr>
+            <tr>
+              <td><strong>4:00-6:30 PM</strong> (Evening opening)</td>
+              <td>Medium</td>
+              <td>Pleasant lighting, cultural activities</td>
+            </tr>
+            <tr>
+              <td><strong>Weekends & Holidays</strong></td>
+              <td>Very High</td>
+              <td>Expect 2-3x longer wait times</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="highlight-box">
+        <h3>Why Brihadeeswarar Temple Takes More Time to Explore</h3>
+        <p>The Brihadeeswarar Temple isn't just another temple—it's a massive complex that deserves time to appreciate fully. Here's why visitors often spend more time than planned:</p>
+        <ul>
+          <li><strong>Sheer Scale:</strong> The complex spans 3.2 hectares—you'll walk extensively between structures</li>
+          <li><strong>Photo Opportunities:</strong> Every corner is Instagram-worthy, from macro carvings to panoramic views</li>
+          <li><strong>Cultural Immersion:</strong> Watching rituals, listening to chanting, and absorbing the atmosphere takes time</li>
+          <li><strong>Guided Tours:</strong> Hiring a guide (₹200-500) adds depth but extends your visit as they decode hidden symbolism</li>
         </ul>
       </div>
       
-      <div class="bg-temple-stone rounded-lg p-6 my-8">
-        <h3 class="text-temple-navy font-bold mb-4">2. Exploring Architecture & Sculptures (2-3 Hours)</h3>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            World's largest Shiva Lingam and Nandi statue
-          </li>
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            Intricate Chola-era stone carvings
-          </li>
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            On-site museum with ancient relics
-          </li>
+      <div class="duration-card">
+        <h3>Nearby Attractions to Combine With Your Visit</h3>
+        <p>If you have extra time, consider these nearby attractions (all within 1km of the temple):</p>
+        <ul>
+          <li><strong>Thanjavur Palace:</strong> Add 1.5-2 hours</li>
+          <li><strong>Saraswathi Mahal Library:</strong> Add 1 hour</li>
+          <li><strong>Schwartz Church:</strong> Add 30 minutes</li>
+          <li><strong>Tamil University Museum:</strong> Add 1 hour</li>
         </ul>
+        <p>For a complete day in Thanjavur, budget <strong>5-6 hours</strong> including the temple visit.</p>
       </div>
       
-      <div class="bg-temple-stone rounded-lg p-6 my-8">
-        <h3 class="text-temple-navy font-bold mb-4">3. Peak Times & Tips</h3>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            Mornings (6 AM - 9 AM) are ideal
-          </li>
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            Avoid weekends & festivals for shorter wait times
-          </li>
-          <li class="flex items-center">
-            <span class="text-temple-red mr-2">•</span>
-            Guided tours available at ticket counter
-          </li>
-        </ul>
-      </div>
-      
-      <div class="bg-[#fff8e1] border-l-4 border-[#ffc107] p-6 my-8">
-        <h3 class="text-temple-navy font-bold mb-4">Why It Takes 2-3 Hours?</h3>
-        <ul class="space-y-2">
-          <li class="flex items-center">
-            <span class="text-[#27ae60] mr-2">✓</span>
-            <strong>Sheer Scale:</strong> 3.2 hectares of extensive walking
-          </li>
-          <li class="flex items-center">
-            <span class="text-[#27ae60] mr-2">✓</span>
-            <strong>Photo Stops:</strong> Countless Instagram-worthy spots
-          </li>
-          <li class="flex items-center">
-            <span class="text-[#27ae60] mr-2">✓</span>
-            <strong>Guided Tours:</strong> ₹200-500 for detailed insights
-          </li>
-        </ul>
+      <div class="highlight-box">
+        <h3>Plan Your Perfect Visit</h3>
+        <p>Now that you know how much time you'll need, here's how to plan:</p>
+        <ol>
+          <li>Check current <a href="/visitor-info" class="text-temple-red hover:text-temple-brown">temple timings</a> (they change seasonally)</li>
+          <li>Decide your primary purpose (darshan, photography, study)</li>
+          <li>Allocate time based on our recommendations above</li>
+          <li>Add 30 minutes buffer for unexpected delays</li>
+          <li>Consider hiring a guide if exploring architecture</li>
+        </ol>
+        <p>For more detailed information about the temple's history and significance, visit our <a href="/history" class="text-temple-red hover:text-temple-brown">Brihadeeswarar Temple history page</a>.</p>
       </div>
     </article>`,
     author: "Temple Administration",
@@ -410,7 +470,7 @@ export const blogPosts: BlogPost[] = [
       <div class="overflow-x-auto">
         <table class="w-full border-collapse">
           <thead>
-            <tr class="bg-blue-300 text-white">
+            <tr class="bg-temple-navy text-white">
               <th class="p-4 text-left">Time Slot</th>
               <th class="p-4 text-left">Crowd Level</th>
               <th class="p-4 text-left">Why Visit Now?</th>
@@ -450,7 +510,7 @@ export const blogPosts: BlogPost[] = [
       <div class="overflow-x-auto">
         <table class="w-full border-collapse">
           <thead>
-            <tr class="bg-blue-300 text-white">
+            <tr class="bg-temple-navy text-white">
               <th class="p-4 text-left">Season</th>
               <th class="p-4 text-left">Months</th>
               <th class="p-4 text-left">Advantages</th>
