@@ -1,0 +1,41 @@
+---
+interface Props {
+  items: {
+    label: string;
+    href: string;
+  }[];
+}
+
+const { items } = Astro.props;
+
+// Schema markup for breadcrumbs
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@id": `https://brihadeeswaratemple.com${item.href}`,
+      "name": item.label
+    }
+  }))
+};
+---
+
+<nav aria-label="Breadcrumb" class="py-4">
+  <ol class="flex items-center space-x-2 text-sm">
+    {items.map((item, index) => (
+      <li class="flex items-center">
+        {index > 0 && <span class="mx-2 text-gray-500">/</span>}
+        <a 
+          href={item.href}
+          class={`hover:text-temple-red transition-colors ${index === items.length - 1 ? 'text-temple-navy font-semibold' : 'text-gray-600'}`}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ol>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</nav>

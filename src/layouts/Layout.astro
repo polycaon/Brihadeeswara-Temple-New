@@ -48,7 +48,7 @@ const schema = {
 const newsTickerItems = [
   {
     text: "Discover the Great Living Chola Temple of Tamil Nadu",
-    url: "https://www.jagranjosh.com/web-stories/which-temple-in-tamil-nadu-is-known-as-great-living-chola-temple-118139",
+    url: "/history",
     date: "May 5"
   },
   {
@@ -189,7 +189,7 @@ const newsTickerItems = [
       <div class="news-ticker-content">
         {newsTickerItems.map(item => (
           <span class="news-ticker-item">
-            <a href={item.url} target="_blank" rel="noopener noreferrer">
+            <a href={item.url}>
               {item.text}
               <span class="news-ticker-date">({item.date})</span>
             </a>
