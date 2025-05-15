@@ -4,6 +4,19 @@
   "framework": "astro",
   "installCommand": "npm install",
   "routes": [
+    { 
+      "src": "^/(.*)$",
+      "status": 301,
+      "headers": {
+        "Location": "https://www.brihadeeswaratemple.com/$1"
+      },
+      "has": [
+        {
+          "type": "host",
+          "value": "brihadeeswaratemple.com"
+        }
+      ]
+    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/" }
   ],

@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 
+# Disallow specific blog posts
+Disallow: /blog/raja-raja-chola
+Disallow: /blog/temple-festivals
+
 # Sitemaps
-Sitemap: https://brihadeeswaratemple.com/sitemap.xml
+Sitemap: https://www.brihadeeswaratemple.com/sitemap.xml
